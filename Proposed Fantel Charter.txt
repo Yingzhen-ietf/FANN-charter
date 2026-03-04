@@ -1,0 +1,45 @@
+# Fast Notification for Traffic Engineering and Load Balancing (FANTEL) Working Group (this name may be changed based on discussion)
+
+# Draft Charter
+
+
+## Description
+
+Modern network applications, ranging from AI/ML training to large-scale cloud services, require lossless and adaptive networks to ensure reliable, congestion-free data transfer within or across multiple data centers. However, existing traffic management mechanisms often face limitations in responsiveness, coverage, and operational complexity, particularly in high-speed, large-scale, dynamic network environments.
+
+Modern network hardware is capable of detecting congestion, microbursts and other local impairments at fine-grained time scales (ranging from microseconds to sub-millisecond), which outpaces the time needed for current mechanisms to disseminate such information to relevant network nodes for their actions (e.g., traffic engineering (TE), load balancing, flow control, and protection switching etc.), leading to suboptimal performance, delayed recovery, congestion, and inefficient resource utilization.
+
+The FANTEL Working Group is chartered to specify the protocol(s), mechanisms, and procedures for on-demand, fast notification of fine-grained network status information, enabling prompt, precise actions by targeted recipient nodes and applications. The mechanisms for detecting network condition changes and for acting upon receiving the notification are out of scope.
+
+
+## Scope of Work
+
+The WG will produce documents to address the following points:
+
+• Gap Analysis and Requirements
+    o Consider use cases where fast network notification can significantly improve the effect and efficiency of traffic management mechanisms, particularly in DC and WAN environments.
+    o Describe the gaps and requirements for fast network notification mechanisms. 
+    
+ • Define an Information Model of fast network notifications
+    o Develop an Information Model that structures real-time network condition data in a standardized way for effective dissemination and actions.
+    o Define the requirements of the data needed.
+    
+ • Develop Fast Network Notification protocol(s) and the related mechanisms
+    o Specify the fast notification protocol(s) and mechanisms that allow network nodes that take response actions to learn quickly about network conditions such as link congestion, SLA violations, and queue build-up. Different protocols may be defined to meet the requirements in different network scenarios. 
+
+
+## Coordination & Dependencies
+
+The FANTEL WG will collaborate closely with the TEAS, IDR, and LSR WGs to define the data needed for action by traffic management mechanisms, BGP, and the IGPs.
+
+As needed, the WG will also coordinate with other relevant groups to communicate potential needs related to detection and data collection.
+
+
+## Milestones & Deliverables
+
+1.     Gap Analysis and Requirements (2026-09)
+
+2.     Fast Network Notification Information Model (2027-03)
+
+3.     Fast Network Notification Protocol Specifications (2027-09)
+
