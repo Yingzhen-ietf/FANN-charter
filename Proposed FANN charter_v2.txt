@@ -30,9 +30,9 @@ The WG will produce documents to address the following points:
     o For each use case, describe the requirements on the information needed, the time scale of the notification, and the actions to be peformed. 
     o Identify the gaps for fast network notification mechanisms.  
     
- • Define an Information Model of fast network notifications
-    o Develop an Information Model that structures real-time network condition data in a standardized way for effective dissemination and actions.
-    o Define the requirements of the data needed for functions/actions including but not limited to traffic engineering, load balancing, flow control and protection switching.
+ • Define an Information Model for fast network notifications
+    o Develop an Information Model that structures real-time network condition data in a standardized way for effective encoding in dissemination mechanisms and for efficient use by elements that take resultant actions.
+    o Define the requirements of the data needed for functions/actions including, but not limited to, traffic engineering, load balancing, flow control and protection switching.
     
  • Develop Fast Network Notification protocols and the related mechanisms
     o Specify the fast network notification protocols and mechanisms that allow network nodes that may take response actions to learn quickly about network conditions. Different protocols may be defined to meet the requirements in different network scenarios. 
