@@ -13,7 +13,7 @@ The network condition data that may be advertised using fast network notificatio
 
 The fast network notifications may be used in network scenarios including Data Center Networks (DCN) and Wide Area Networks (WAN) which provide inter-connection between multiple data centers. The specific protocols and mechanisms may be different to meet the requirements in different network scenarios.
 
-It is considered that the protocols and mechanisms of fast network notifications can be applied to different data plane technologies in layer-3 (e.g., IPv4, IPv6, SRv6 and MPLS), and the mechanisms can be useful for the management of both the TE traffic and the traffic which takes the shortest paths. 
+The protocols and mechanisms developed by FANN for fast network notification should be equally applicable to different IETF layer-3 data plane technologies (i.e. IPv4, IPv6, SRv6 and MPLS), and should be useful for the management of both TE traffic and shortest-path / best effort traffic. 
 
 The FANN WG will identify the threat models for fast network notifications, and will address the security considerations introduced by the protocols it defines. 
 
