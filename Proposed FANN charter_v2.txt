@@ -2,22 +2,22 @@
 
 Modern network applications, ranging from AI/ML training to cloud services, require adaptive networks to ensure reliable and congestion-free data transfer within or across multiple data centers. However, existing traffic management mechanisms often face limitations in responsiveness, coverage, and operational complexity, particularly in high-speed, large-scale, dynamic network environments.
 
-Modern network hardware is capable of detecting congestion, microbursts, and other local status at fine-grained time scales (ranging from microseconds to sub-millisecond), which outpaces the time needed for current mechanisms (e.g., control plane based information distribution or management plane based information collection） to disseminate such information to relevant network nodes for their actions (e.g., traffic engineering (TE), load balancing, flow control, and protection switching etc.), leading to suboptimal performance, delayed recovery, congestion, and inefficient resource utilization.
+Modern network hardware is capable of detecting congestion, microbursts and other local statuses at fine-grained time scales (ranging from microseconds to sub-millisecond), which outpaces the time needed for current mechanisms (e.g. control plane based information distribution or management plane based information collection） to disseminate such information to relevant network nodes for their actions (e.g., traffic engineering (TE), load balancing, flow control, and protection switching etc.), leading to suboptimal performance, delayed recovery, congestion, and inefficient resource utilization.
 
-The FAst Network Notification (FANN) Working Group is chartered to specify the protocols, mechanisms, and procedures for on-demand, fast notifications of fine-grained network status information, which allow network nodes that may take response actions to learn quickly about the network conditions.
+The FAst Network Notification (FANN) Working Group is chartered to specify the protocols, mechanisms, and procedures for on-demand, fast notification of fine-grained network status information, which allow network nodes that may take response actions to learn quickly about network conditions.
 
 
 #Scope
 
-The network condition data that may be advertised using fast network notifications includes link failure, link congestion, SLA violations, and queue build-up etc. An information model may be defined to structure the network condition data in a standardized way for effective dissemination and actions.
+The network condition data that may be advertised using fast network notifications includes link failures, link congestion, SLA violations, and queue build-up etc. An information model may be defined to structure the network condition data in a standardized way for effective dissemination and actions.
 
 The fast network notifications may be used in network scenarios including Data Center Networks (DCN) and Wide Area Networks (WAN) which provide inter-connection between multiple data centers. The specific protocols and mechanisms may be different to meet the requirements in different network scenarios.
 
 It is considered that the protocols and mechanisms of fast network notifications can be applied to different data plane technologies in layer-3 (e.g., IPv4, IPv6, SRv6 and MPLS), and the mechanisms can be useful for the management of both the TE traffic and the traffic which takes the shortest paths. 
 
-The FANN WG will identify the threat models for fast network notifications, and will address the security considerations introduced by the protocols it define. 
+The FANN WG will identify the threat models for fast network notifications, and will address the security considerations introduced by the protocols it defines. 
 
-The mechanisms for detecting network condition changes and the specific mechanisms for acting upon receiving the fast notifications are out of scope. 
+The mechanisms for detecting network condition changes and the specific mechanisms for acting upon received fast notifications are out of scope. 
 
 
 #Work Items
@@ -30,9 +30,9 @@ The WG will produce documents to address the following points:
     o For each use case, describe the requirements on the information needed, the time scale of the notification, and the actions to be peformed. 
     o Identify the gaps for fast network notification mechanisms.  
     
- • Define an Information Model of fast network notifications
+ • Define an Information Model for fast network notifications
     o Develop an Information Model that structures real-time network condition data in a standardized way for effective dissemination and actions.
-    o Define the requirements of the data needed for functions/actions including but not limited to traffic engineering, load balancing, flow control, and protection switching.
+    o Define the requirements of the data needed for functions/actions including, but not limited to, traffic engineering, load balancing, flow control and protection switching.
     
  • Develop Fast Network Notification protocols and the related mechanisms
     o Specify the fast network notification protocols and mechanisms that allow network nodes that may take response actions to learn quickly about network conditions. Different protocols may be defined to meet the requirements in different network scenarios. 
