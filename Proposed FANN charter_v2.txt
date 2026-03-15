@@ -11,7 +11,7 @@ The FAst Network Notification (FANN) Working Group is chartered to specify the p
 
 The network condition data that may be advertised using fast network notifications includes link failure, link congestion, SLA violations, and queue build-up etc. An information model may be defined to structure the network condition data in a standardized way for effective dissemination and actions.
 
-The fast network notifications may be used in network scenarios including Data Center Networks (DCN) and Wide Area Networks (WAN) which provide inter-connection between multiple data centers. The specific protocols and mechanisms may be different to meet the requirements in different network scenarios.
+The fast network notifications may be used in Wide Area Networks (WAN) scenarios where multiple data centers are interconnected, although it would also apply in any WAN scenario where high reliability or quality is required. The specific protocols and mechanisms developed by FANN will focus on these WAN scenarios, but may also be applicable in other environments such as within the data center.
 
 It is considered that the protocols and mechanisms of fast network notifications can be applied to different data plane technologies in layer-3 (e.g. IPv4, IPv6, SRv6 and MPLS), and the mechanisms can be useful for the management of both the TE traffic and the traffic which takes the shortest paths. 
 
