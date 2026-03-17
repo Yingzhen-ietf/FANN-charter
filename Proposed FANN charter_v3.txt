@@ -35,12 +35,11 @@ The WG will produce documents to address the following points:
     o Define the requirements of the data needed for functions/actions including, but not limited to, traffic engineering, load balancing, flow control and protection switching.
     
  • Develop Fast Network Notification protocols and the related mechanisms
-    o Specify the fast network notification protocols and mechanisms that allow network nodes that may take response actions to learn quickly about network conditions. Different protocols may be defined to meet the requirements in different network scenarios. The WG may decide to develop them in a particular order.
-
+    o Specify the protocol extensions or new protocols needed for fast network notification. Protocol extensions shall only be made in cooperation with the working group that owns the specific protocol. Different protocols may be needed to meet the requirements in different network scenarios. The WG may decide to develop them in a particular order.
 
 #Collaborations
 
-The FANN WG will collaborate with the NMOP working group for the specification of terminology related to network status and with the IVY working group for the identification of network components associated with specific statuses. It will work closely with the TEAS WG to identify the data needed by network nodes that perform traffic engineering actions, and it will collaborate with RTGWG to identify information needed to perform Fast Reroute (FRR) and other protection mechanisms. It may also collaborate with the IDR and LSR WGs to understand whether there are optimisations in status information distribution that can benefit BGP and the IGPs. As needed, the WG will also coordinate with other relevant groups to communicate potential needs related to detection and data collection.
+The FANN WG will collaborate with the NMOP working group for the specification of terminology related to network status and with the IVY working group for the identification of network components associated with specific statuses. It will work closely with the TEAS WG to identify the data needed by network nodes that perform traffic engineering actions, and it will collaborate with RTGWG to identify information needed to perform Fast Reroute (FRR) and other protection mechanisms. It may also collaborate with the IDR and LSR WGs to understand whether there are optimisations in status information distribution that can benefit BGP and the IGPs. The WG will also coordinate with other WGs for work on extensions to existing protocols if changes are needed for detection or data dissemination.
 
 
 #Milestones
