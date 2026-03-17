@@ -15,7 +15,7 @@ The fast network notifications may be used in network scenarios including Data C
 
 The protocols and mechanisms developed by FANN for fast network notification may be applicable to different data plane technologies, and may be useful for the management of both TE traffic and shortest-path / best effort traffic. 
 
-The FANN WG will identify the threat models for fast network notifications, and will address the security considerations introduced by the protocols it defines. 
+The FANN WG will identify the threat models for fast network notifications, and will address the security considerations introduced by the protocols it defines. The Working Group will initially focus on solutions for networks that are under a single administrative control or within a closed group of administrative control. The FANN WG will not spend energy on solutions for large groups of domains such as the Internet.
 
 The mechanisms for detecting (reactively or proactively) network condition changes and the specific mechanisms for acting upon received fast notifications are out of scope. 
 
