@@ -28,7 +28,9 @@ The WG will produce documents to address the following points:
     o Provide the definition of "fast network notification".
     o Consider use cases where fast network notification can significantly improve the effect and efficiency of traffic management mechanisms.
     o For each use case, describe the requirements on the information needed, the time scale of the notification, and the actions to be performed. 
-    o Identify the gaps for fast network notification mechanisms.  
+    o Identify the gaps for fast network notification mechanisms.
+    o For each use case, describe the requirements on the information needed, the nodes that collect and consume the information, the time scale of the notification, and the actions to be peformed. 
+    o Consider the applicability and extensiblity of existing IETF protocols as fast network notification mechanisms, and identify the gaps that need to be addressed through protocol extensions or as new protocols.
     
  • Define an Information Model for fast network notifications
     o Develop an Information Model that structures real-time network condition data in a standardized way for effective encoding in dissemination mechanisms and for efficient use by elements that take resultant actions.
