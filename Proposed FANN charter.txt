@@ -8,7 +8,7 @@ The FAst Network Notification (FANN) Working Group is chartered to specify the p
 
 #Scope
 
-The network condition data that may be advertised using fast network notifications includes link failures, link congestion, SLA violations, and queue build-up etc. An information model will be defined to structure the network condition data in a standardized way for effective dissemination and actions.
+The network condition data that may be advertised using fast network notifications includes link failures, link congestion, SLA violations, queue build-up, etc. An information model will be defined to structure the network condition data in a standardized way for effective dissemination and actions.
 
 The WG will identify which nodes may receive fast network notifications. Not all nodes neeed to receive the notifications. However, any node any node in the network should be able to receive the notifications.
 
