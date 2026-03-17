@@ -40,7 +40,7 @@ The WG will produce documents to address the following points:
 
 #Collaborations
 
-The FANN WG will collaborate closely with the TEAS WG to define the data needed for actions of traffic engineering mechanisms. It will collaborate with RTGWG for actions of Fast Reroute (FRR) and other protection mechanisms. It may collaborate with IDR and LSR WGs for the data needed by BGP and the IGPs. As needed, the WG will also coordinate with other relevant groups to communicate potential needs related to detection and data collection.
+The FANN WG will collaborate with the NMOP working group for the specification of terminology related to network status and with the IVY working group for the identificatoin of network components associated with specific statuses. It will work closely with the TEAS WG to identify the data needed by network nodes that perform traffic engineering actions, and it will collaborate with RTGWG to identify information needed to perform Fast Reroute (FRR) and other protection mechanisms. It may also collaborate with the IDR and LSR WGs to understand whether there are optimisations in status information distribution that can benefit BGP and the IGPs. As needed, the WG will also coordinate with other relevant groups to communicate potential needs related to detection and data collection.
 
 
 #Milestones
