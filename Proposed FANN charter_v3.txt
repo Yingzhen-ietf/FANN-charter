@@ -17,7 +17,7 @@ The protocols and mechanisms developed by FANN for fast network notification sho
 
 The FANN WG will identify the threat models for fast network notifications, and will address the security considerations introduced by the protocols it defines. 
 
-The mechanisms for detecting network condition changes and the specific mechanisms for acting upon received fast notifications are out of scope. 
+The mechanisms for detecting (reactively or proactively) network condition changes and the specific mechanisms for acting upon received fast notifications are out of scope. 
 
 
 #Work Items
