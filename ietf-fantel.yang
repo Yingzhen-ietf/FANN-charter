@@ -41,7 +41,7 @@ module ietf-fantel {
     description
       "Initial revision.";
     reference
-      "draft-ietf-fantel-yang-00: YANG Data Model for Fast Network
+      "draft-tantsura-fantel-yang-00: YANG Data Model for Fast Network
        Notification (FANTEL)";
   }
 
