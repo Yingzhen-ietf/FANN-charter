@@ -4,8 +4,7 @@ Modern network applications, ranging from AI/ML training to cloud services, requ
 
 Modern network hardware is capable of detecting congestion, microbursts and other local statuses at fine-grained time scales (ranging from microseconds to sub-millisecond), which outpaces the time needed for current mechanisms (e.g. control plane based information distribution or management plane based information collection to disseminate such information to relevant network nodes for their actions (for example, and not limited to, traffic engineering (TE), load balancing, flow control, protection switching, etc.), leading to suboptimal performance, delayed recovery, congestion, and inefficient resource utilization.
 
-The FAst Network Notification (FANN) Working Group is chartered to specify the protocols, mechanisms, and procedures for on-demand, fast notification of fine-grained network status information, which allow network nodes that may take response actions to learn quickly about network conditions.
-
+The FAst Network Notification (FANN) Working Group is chartered to specify the protocols, mechanisms, and procedures for on-demand, fast notification of fine-grained network status information, by the network nodes that detect the status to network nodes that have been registered by a control or management protocol, or by direct confguration, to take response actions.
 
 #Scope
 
