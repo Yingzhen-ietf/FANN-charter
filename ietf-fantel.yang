@@ -1,0 +1,428 @@
+<CODE BEGINS> file "ietf-fantel.yang"
+module ietf-fantel {
+  yang-version 1.1;
+  namespace "urn:ietf:params:xml:ns:yang:ietf-fantel";
+  prefix fantel;
+
+  import ietf-yang-types {
+    prefix yang;
+    reference "RFC 6991: Common YANG Data Types";
+  }
+
+  organization
+    "IETF FANTEL (Fast Notification for Traffic Engineering and
+     Load Balancing) Working Group";
+  contact
+    "WG Web:   https://datatracker.ietf.org/wg/fantel/
+     WG List:  fantel@ietf.org
+     Editor:   TBD";
+  description
+    "This module defines a YANG data model for fast notification of
+     fine-grained network status information as specified in the
+     FANTEL information model. It structures real-time network
+     condition data for dissemination to nodes and applications
+     that perform traffic engineering, load balancing, flow control,
+     and protection switching.
+
+     The mechanisms for detecting network condition changes and for
+     acting upon receiving the notification are out of scope.
+
+     Copyright (c) 2025 IETF Trust and the persons identified as
+     authors of the code. All rights reserved.
+
+     Redistribution and use in source and binary forms, with or
+     without modification, is permitted pursuant to, and subject to
+     the license terms contained in, the Revised BSD License set
+     forth in Section 4.c of the IETF Trust's Legal Provisions
+     Relating to IETF Documents
+     (https://trustee.ietf.org/license-info).";
+
+  revision 2025-03-01 {
+    description
+      "Initial revision.";
+    reference
+      "draft-ietf-fantel-yang-00: YANG Data Model for Fast Network
+       Notification (FANTEL)";
+  }
+
+  /*
+   * Type definitions
+   */
+
+  typedef time-scale-type {
+    type enumeration {
+      enum microseconds {
+        description "Time scale in microseconds.";
+      }
+      enum sub-millisecond {
+        description "Time scale below one millisecond.";
+      }
+    }
+    description
+      "Granularity of the notification or condition in time.";
+  }
+
+  typedef notification-scope-type {
+    type enumeration {
+      enum link {
+        description "Scope limited to a single link.";
+      }
+      enum path {
+        description "Scope along a path.";
+      }
+      enum domain {
+        description "Scope within a domain.";
+      }
+      enum data-center {
+        description "Scope within a data center.";
+      }
+      enum wan {
+        description "Scope in WAN environment.";
+      }
+    }
+    description
+      "Scope of the fast network notification.";
+  }
+
+  typedef recipient-type {
+    type enumeration {
+      enum network-node {
+        description "Recipient is a network node.";
+      }
+      enum application {
+        description "Recipient is an application.";
+      }
+    }
+    description
+      "Type of entity that receives the notification.";
+  }
+
+  typedef action-type {
+    type enumeration {
+      enum traffic-engineering {
+        description "Notification is for traffic engineering actions.";
+      }
+      enum load-balancing {
+        description "Notification is for load balancing actions.";
+      }
+      enum flow-control {
+        description "Notification is for flow control actions.";
+      }
+      enum protection-switching {
+        description "Notification is for protection switching actions.";
+      }
+    }
+    description
+      "Type of action the recipient may take upon the notification.";
+  }
+
+  typedef network-environment-type {
+    type enumeration {
+      enum data-center {
+        description "Data center environment.";
+      }
+      enum wan {
+        description "WAN environment.";
+      }
+      enum hybrid {
+        description "Hybrid DC and WAN.";
+      }
+    }
+    description
+      "Network environment context.";
+  }
+
+  typedef severity-level-type {
+    type enumeration {
+      enum low {
+        description "Low severity.";
+      }
+      enum medium {
+        description "Medium severity.";
+      }
+      enum high {
+        description "High severity.";
+      }
+      enum critical {
+        description "Critical severity.";
+      }
+    }
+    description
+      "Severity of the network condition.";
+  }
+
+  /*
+   * Groupings
+   */
+
+  grouping network-location {
+    description
+      "Network location context for the notification or condition.";
+    leaf environment {
+      type network-environment-type;
+      description "Network environment.";
+    }
+    leaf domain-id {
+      type string;
+      description "Identifier of the domain.";
+    }
+    leaf path-id {
+      type string;
+      description "Optional path identifier.";
+    }
+    leaf link-id {
+      type string;
+      description "Optional link identifier.";
+    }
+  }
+
+  grouping notification-source {
+    description
+      "Source of the fast network notification. Detection mechanism
+       is out of scope; this identifies the origin.";
+    leaf source-id {
+      type string;
+      description "Unique identifier of the source.";
+    }
+    leaf node-identifier {
+      type string;
+      description "Identifier of the node that originated the notification.";
+    }
+    uses network-location;
+  }
+
+  grouping recipient-info {
+    description
+      "Target recipient of the fast network notification.";
+    leaf recipient-id {
+      type string;
+      description "Identifier of the recipient.";
+    }
+    leaf recipient-type {
+      type recipient-type;
+      description "Type of recipient (node or application).";
+    }
+    leaf-list target-actions {
+      type action-type;
+      description
+        "Actions this recipient may take (TE, load balancing,
+         flow control, protection switching).";
+    }
+  }
+
+  grouping condition-common {
+    description
+      "Common attributes for all network condition types.";
+    leaf condition-id {
+      type string;
+      description "Unique identifier of the condition.";
+    }
+    leaf detected-at {
+      type yang:date-and-time;
+      description "Time when the condition was detected.";
+    }
+    leaf severity {
+      type severity-level-type;
+      description "Severity of the condition.";
+    }
+    leaf granularity {
+      type time-scale-type;
+      description "Time granularity of the condition.";
+    }
+  }
+
+  grouping link-congestion {
+    description "Link congestion condition.";
+    leaf link-id {
+      type string;
+      description "Identifier of the congested link.";
+    }
+    leaf utilization-level {
+      type decimal64 {
+        fraction-digits 2;
+        range "0..100";
+      }
+      units "percent";
+      description "Link utilization level.";
+    }
+    leaf threshold-exceeded {
+      type boolean;
+      description "Whether a configured threshold was exceeded.";
+    }
+  }
+
+  grouping microburst {
+    description "Microburst condition.";
+    leaf duration {
+      type yang:timeticks;
+      description "Duration of the microburst.";
+    }
+    leaf intensity {
+      type decimal64 {
+        fraction-digits 4;
+      }
+      description "Intensity metric of the microburst.";
+    }
+    leaf affected-resource {
+      type string;
+      description "Identifier of the affected resource.";
+    }
+  }
+
+  grouping sla-violation {
+    description "SLA violation condition.";
+    leaf sla-reference {
+      type string;
+      description "Reference to the SLA that was violated.";
+    }
+    leaf violated-metric {
+      type string;
+      description "Type of metric that was violated.";
+    }
+    leaf measured-value {
+      type decimal64 {
+        fraction-digits 4;
+      }
+      description "Measured value that caused the violation.";
+    }
+    leaf threshold {
+      type decimal64 {
+        fraction-digits 4;
+      }
+      description "Threshold that was exceeded.";
+    }
+  }
+
+  grouping queue-build-up {
+    description "Queue build-up condition.";
+    leaf queue-id {
+      type string;
+      description "Identifier of the queue.";
+    }
+    leaf depth {
+      type uint64;
+      description "Current queue depth (e.g., bytes or packets).";
+    }
+    leaf growth-rate {
+      type decimal64 {
+        fraction-digits 4;
+      }
+      description "Rate at which the queue is building up.";
+    }
+  }
+
+  grouping local-impairment {
+    description "Local impairment condition.";
+    leaf impairment-type {
+      type string;
+      description "Type of local impairment.";
+    }
+    leaf description {
+      type string;
+      description "Human-readable description of the impairment.";
+    }
+    uses network-location;
+  }
+
+  grouping network-condition {
+    description
+      "Structured network condition data. One of the condition types
+       must be present.";
+    uses condition-common;
+    choice condition-type {
+      mandatory true;
+      description "Type of network condition.";
+      case link-congestion {
+        uses link-congestion;
+      }
+      case microburst {
+        uses microburst;
+      }
+      case sla-violation {
+        uses sla-violation;
+      }
+      case queue-build-up {
+        uses queue-build-up;
+      }
+      case local-impairment {
+        uses local-impairment;
+      }
+    }
+  }
+
+  grouping fast-network-notification {
+    description
+      "Fast network notification: on-demand, fine-grained network
+       status information for prompt actions by recipients.";
+    leaf notification-id {
+      type string;
+      description "Unique identifier of the notification.";
+    }
+    leaf timestamp {
+      type yang:date-and-time;
+      mandatory true;
+      description "Time when the notification was generated.";
+    }
+    leaf time-scale {
+      type time-scale-type;
+      description "Time scale of the notification (e.g., microseconds).";
+    }
+    leaf scope {
+      type notification-scope-type;
+      description "Scope of the notification (link, path, domain, etc.).";
+    }
+    leaf validity-period {
+      type yang:timeticks;
+      description "Validity period of the notification.";
+    }
+    container source {
+      uses notification-source;
+      description "Origin of the notification.";
+    }
+    list recipients {
+      key "recipient-id";
+      uses recipient-info;
+      description "Target recipients for the notification.";
+    }
+    container condition {
+      uses network-condition;
+      description "Network condition conveyed by this notification.";
+    }
+  }
+
+  /*
+   * Top-level structure
+   */
+
+  container fantel {
+    description
+      "Top-level container for FANTEL configuration and state.";
+    container notifications {
+      config false;
+      description
+        "State container for received or generated fast network
+         notifications. Implementations may use this for recent
+         notifications or expose the same structure via YANG
+         notifications (notification statement) for real-time
+         delivery.";
+      list fast-network-notification {
+        key "notification-id";
+        description "A fast network notification entry.";
+        uses fast-network-notification;
+      }
+    }
+  }
+
+  /*
+   * YANG notification for real-time delivery
+   */
+
+  notification fast-network-notification-event {
+    description
+      "Fast network notification event for real-time dissemination
+       of fine-grained network status. Can be subscribed to via
+       NETCONF or RESTCONF.";
+    uses fast-network-notification;
+  }
+}
+<CODE ENDS>
