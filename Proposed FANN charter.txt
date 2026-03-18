@@ -12,7 +12,7 @@ The network condition data that may be advertised using fast network notificatio
 
 The WG will identify which nodes may receive fast network notifications. Not all nodes neeed to receive the notifications. However, any node any node in the network should be able to receive the notifications.
 
-The fast network notifications may be used in network scenarios including Data Center Networks (DCN) and Wide Area Networks (WAN) which provide inter-connection between multiple data centers. The specific protocols and mechanisms may be different to meet the requirements in different network scenarios.
+The fast network notifications may be used in network scenarios including Data Center Networks (DCN) and Wide Area Networks (WAN) which provide inter-connection between data centers. The specific protocols and mechanisms may be different to meet the requirements in different network scenarios.
 
 The protocols and mechanisms developed by FANN for fast network notification may be applicable to different data plane technologies, and may be useful for the management of both TE traffic and shortest-path / best effort traffic. 
 
@@ -30,7 +30,7 @@ The WG will produce documents to address the following points:
     o Consider use cases where fast network notification can significantly improve the effect and efficiency of traffic management mechanisms.
     o For each use case, describe the requirements on the information needed, the time scale of the notification, and the actions to be performed. 
     o Identify the gaps for fast network notification mechanisms.
-    o For each use case, describe the requirements on the information needed, the nodes that collect and consume the information, the time scale of the notification, and the actions to be peformed. 
+    o For each use case, describe the requirements on the information needed, the nodes that collect and consume the information, the time scale of the notification, and the actions to be performed. 
     o Consider the applicability and extensiblity of existing IETF protocols as fast network notification mechanisms, and identify the gaps that need to be addressed through protocol extensions or as new protocols.
     
  • Define an Information Model for fast network notifications
